@@ -359,6 +359,7 @@ const loadDistributionCSV = async () => {
       genus: record["Genus"] || "-",
       family: record["Family"] || "-",
       order: record["Order"] || "-",
+      population: record["個体数"] || "-",
       literatureID: record["文献ID"] || "-",
       page: record["掲載ページ"] || "-",
       original: record["オリジナル"] || "-",
@@ -1573,9 +1574,11 @@ const preparePopupContent = (filteredData) => {
         ${translations[lang]?.original_scientific_name || "文献中の学名"}: ${row.originalScientificName || (translations[lang]?.unknown || "不明")}<br>
         ${translations[lang]?.page || "ページ"}: ${row.page || (translations[lang]?.unknown || "不明")}<br>
         ${translations[lang]?.location || "場所"}: ${row.location || (translations[lang]?.unknown || "不明")}<br>
+        ${translations[lang]?.population || "個体数"}: ${row.population || (translations[lang]?.unknown || "不明")}<br>
         ${translations[lang]?.collection_date || "採集日"}: ${row.date || (translations[lang]?.unknown || "不明")}<br>
         ${translations[lang]?.collector_jp || "採集者"}: ${row.collectorJp || (translations[lang]?.unknown || "不明")}<br>
         ${translations[lang]?.collector_en || "collector"}: ${row.collectorEn || (translations[lang]?.unknown || "不明")}<br><br>
+        ${translations[lang]?.note_en || "備考"}: ${row.note || (translations[lang]?.unknown || "不明")}<br><br>
         ${translations[lang]?.literature || "文献"}: ${literatureName} ${
           literatureLink ? `<a href="${literatureLink}" target="_blank">${literatureLink}</a>` : ""
         }<br><br>
